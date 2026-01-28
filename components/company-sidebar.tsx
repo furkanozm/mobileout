@@ -19,13 +19,20 @@ import {
 } from "lucide-react"
 
 interface CompanySidebarProps {
-  open: boolean
-  onClose: () => void
-  onNavigate: (route: string) => void
-  onLogout: () => void
+  open?: boolean
+  onClose?: () => void
+  onNavigate?: (route: string) => void
+  onLogout?: () => void
 }
 
-export function CompanySidebar({ open, onClose, onNavigate, onLogout }: CompanySidebarProps) {
+export function CompanySidebar({
+  open = false,
+  onClose = () => {},
+  onNavigate = (route: string) => {
+    console.log(`Navigate to: ${route}`)
+  },
+  onLogout = () => {},
+}: CompanySidebarProps) {
   const [activeSection, setActiveSection] = useState<string | null>(null)
 
   const menuItems = [

@@ -8,7 +8,7 @@ export default function FirmaLayout({
 }) {
   return (
     <div className="flex h-screen">
-      <CompanySidebar onNavigate={(route) => console.log(`Navigate to: ${route}`)} />
+      <CompanySidebar />
       <main className="flex-1 overflow-auto">{children}</main>
     </div>
   )
